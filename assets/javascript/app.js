@@ -5,7 +5,7 @@ class _app {
   audioElement = null;
   musicVolume = 0.12;
   musicFadeIn = 4000;
-  skippedIntro = false;
+  skippedIntro = true;
   backgroundToggler = false;
   shouldIgnoreVideo = false;
   effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'tada', 'wobble', 'jello'];
@@ -14,7 +14,7 @@ class _app {
   titleChanger = (text, delay) => {
     if (!text) return;
 
-    delay = delay || 2000;
+    delay = delay || 100;
 
     let counter = 0;
 
@@ -27,7 +27,7 @@ class _app {
   iconChanger = (urls, delay) => {
     if (!urls) return;
 
-    delay = delay || 2000;
+    delay = delay || 100;
 
     let counter = 0;
 
