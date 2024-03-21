@@ -9,7 +9,7 @@ class _app {
   backgroundToggler = false;
   shouldIgnoreVideo = false;
   effects = ['bounce', 'flash', 'pulse', 'rubberBand', 'shake', 'swing', 'tada', 'wobble', 'jello'];
-  brandDescription = ['11 years old kids team', 'pro roblox players', 'xane ddosers', 'trashtalkers', 'esoterik fanboys', 'hack vs hack team'];
+  brandDescription = ['Поддержи проект', 'Будь зайкой :3', 'Мы хотим развивать GAF не в вместо вас , а с вами :)', 'Зови друзей , вместе веселей!', 'Все деньги пойдут на развитие сервера.'];
 
   titleChanger = (text, delay) => {
     if (!text) return;
