@@ -89,7 +89,7 @@ document.addEventListener('contextmenu', (event) => {
 });
 
 document.body.onkeyup = (event) => {
-  if (event.keyCode == 32 && app.skippedIntro) {
+ 
     if (app.backgroundToggler) {
       app.videoElement.play();
       app.audioElement.play();
@@ -99,13 +99,12 @@ document.body.onkeyup = (event) => {
     }
 
     return (app.backgroundToggler = !app.backgroundToggler);
-  }
+  
 };
 
 $('html').on('contextmenu', (event) => {
   const img = document.createElement('img');
 
-  const trollfaceLight = app.skippedIntro ? '' : 'trollface-light';
 
   img.src = 'assets/others/trollface.jpg';
   img.width = 64;
@@ -121,9 +120,7 @@ setInterval(() => {
   $('.troll').remove();
 }, 600);
 
-$('.skip').click(() => {
-  skipIntro();
-});
+
 
 $.fn.extend({
   animateCss: function (animationName) {
@@ -153,7 +150,7 @@ const writeLine = (text, speed, timeout, callback) => {
 
 $.getJSON(ipgeolocation, (data) => {
   writeLine(['Authenticating...', "Granting access to <span style='font-size: 14px; color: #06d;'>[unknown]</span>..."], 30, () => {
-    if (app.skippedIntro) return;
+   
 
     clearCursor();
 
@@ -163,7 +160,7 @@ $.getJSON(ipgeolocation, (data) => {
     const country = data.country_name ? data.country_name : 'your country';
 
     writeLine([`Access granted! <span style='font-size: 14px; color: #0f0;'>[success]</span>`, `Welcome back, <i style='color: #0f0'>${ip}</i>! By the way, nice to see someone from ${country} here!`], 30, 500, () => {
-      if (app.skippedIntro) return;
+     
 
       clearCursor();
 
@@ -175,7 +172,7 @@ $.getJSON(ipgeolocation, (data) => {
             clearCursor();
 
             setTimeout(() => {
-              skipIntro();
+              
             }, 500);
           }, 1000)
         );
@@ -183,11 +180,6 @@ $.getJSON(ipgeolocation, (data) => {
     });
   });
 });
-
-const skipIntro = () => {
-  if (app.skippedIntro) return;
-
-  app.skippedIntro = true;
 
   timeouts.forEach((timeout) => {
     clearTimeout(timeout);
